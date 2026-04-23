@@ -1,0 +1,77 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="default">
+    
+    <include><uri>model://sun</uri></include>
+    <include><uri>model://ground_plane</uri></include>
+
+    <model name="black_track">
+      <static>true</static>
+      
+      <link name="bottom">
+        <pose>0 -2 0.001 0 0 0</pose>
+        <visual name="visual">
+          <geometry><box><size>4.4 0.4 0.001</size></box></geometry>
+          <material><ambient>0 0 0 1</ambient><diffuse>0 0 0 1</diffuse></material>
+        </visual>
+      </link>
+
+      <link name="top">
+        <pose>0 2 0.001 0 0 0</pose>
+        <visual name="visual">
+          <geometry><box><size>4.4 0.4 0.001</size></box></geometry>
+          <material><ambient>0 0 0 1</ambient><diffuse>0 0 0 1</diffuse></material>
+        </visual>
+      </link>
+
+      <link name="left">
+        <pose>-2 0 0.001 0 0 0</pose>
+        <visual name="visual">
+          <geometry><box><size>0.4 4.0 0.001</size></box></geometry>
+          <material><ambient>0 0 0 1</ambient><diffuse>0 0 0 1</diffuse></material>
+        </visual>
+      </link>
+
+      <link name="right">
+        <pose>2 0 0.001 0 0 0</pose>
+        <visual name="visual">
+          <geometry><box><size>0.4 4.0 0.001</size></box></geometry>
+          <material><ambient>0 0 0 1</ambient><diffuse>0 0 0 1</diffuse></material>
+        </visual>
+      </link>
+      
+      <link name="middle">
+        <pose>0 0 0.001 0 0 0</pose>
+        <visual name="visual">
+          <geometry><box><size>4.0 0.4 0.001</size></box></geometry>
+          <material><ambient>0 0 0 1</ambient><diffuse>0 0 0 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="obstacle_1">
+      <static>true</static>
+      <pose>0.0 -2.2 0.15 0 0 0</pose> 
+      <link name="link">
+        <collision name="collision"><geometry><box><size>0.08 0.08 0.3</size></box></geometry></collision>
+        <visual name="visual">
+          <geometry><box><size>0.08 0.08 0.3</size></box></geometry>
+          <material><ambient>1 0 0 1</ambient><diffuse>1 0 0 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="obstacle_2">
+      <static>true</static>
+      <pose>1.8 0.0 0.15 0 0 0</pose> 
+      <link name="link">
+        <collision name="collision"><geometry><box><size>0.08 0.08 0.3</size></box></geometry></collision>
+        <visual name="visual">
+          <geometry><box><size>0.08 0.08 0.3</size></box></geometry>
+          <material><ambient>0 0 1 1</ambient><diffuse>0 0 1 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+  </world>
+</sdf>
